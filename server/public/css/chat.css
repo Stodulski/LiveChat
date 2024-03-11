@@ -1,0 +1,119 @@
+@font-face {
+    font-family: "IBM";
+    src: url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+}
+
+.main {
+    height: 82vh;
+    width: 100%;
+    background-color: #eeeeee;
+    font-family: "IBM", sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+.message__container {
+    width: 100%;
+    height: 72vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    margin: 2.5vmin 0;
+}
+.message {
+    max-width: 75%;
+    display: flex;
+    flex-direction: column;
+    padding: 2.5vh;
+    margin: 1vh;
+    word-wrap: break-word;
+    white-space: initial;
+}
+.message-sended {
+    align-self: flex-end;
+    background-color: #3795ce;
+    color: #fff;
+    text-align: end;
+}
+.message-received {
+    align-self: flex-start;
+    background-color: #5ad881;
+    color: #fff;
+    text-align: start;
+}
+.message__owner {
+    font-size: 3vmin;
+    font-weight: bold;
+    margin-bottom: 2vmin;
+}
+.message__text {
+    font-size: 2.75vmin;
+}
+.input__container {
+    height: 6vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.input {
+    height: calc(100% - 2px);
+    border: 1px solid #7c7c7c;
+    outline: none;
+    padding: 0 2.5vmin;
+    background-color: #f6f6f6;
+    width: calc(80% - 5vmin - 2px);
+    font-size: 2.25vmin;
+}
+.input__send {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #10bb52;
+    height: 100%;
+    width: 20%;
+    cursor: pointer;
+    font-size: 2.25vmin;
+}
+.input__send:hover {
+    background-color: #01c14b;
+}
+@media (orientation: portrait) {
+    .footer {
+        display: none;
+    }
+    .main {
+        height: 90vh;
+    }
+
+    .message__container {
+        height: 80vh;
+    }
+    .input__container {
+        height: 10vh;
+    }
+    .input {
+        height: 10vh;
+        border: none;
+        background-color: #dbdbdb;
+        font-size: 4.5vmin;
+    }
+    .input__send {
+        width: 30%;
+        height: 10vh;
+        font-size: 4.5vmin;
+    }
+    .message__owner {
+        font-size: 4.5vmin;
+        margin-bottom: 3vmin;
+    }
+    .message__text {
+        font-size: 3.5vmin;
+    }
+    .message {
+        line-height: 20px;
+    }
+}

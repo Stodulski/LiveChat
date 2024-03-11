@@ -1,0 +1,27 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="/css/reset.css")
+        link(rel="stylesheet" href="/css/form.css")
+        link(rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon")
+        title Sign In / Sign Up
+    body 
+    main(class="form")
+        form(class="form__container" id="signInForm")
+            h2(class="title" id="signInTitle") Sign In
+            input(type="text" class="username" placeholder="Username" id="usernameSignIn")
+            input(type="password" class="password" placeholder="Password" id="passwordSignIn")
+            input(type="submit" class="submit" id="submitSignIn")
+            span(class="change" id="signInChange") Create account.
+
+        form(class="form__container" id="signUpForm") 
+            h2(class="title" id="signUpTitle") Sign Up
+            input(type="text" class="username" placeholder="Username" id="usernameSignUp")
+            input(type="password" class="password" placeholder="Password" id="passwordSignUp")
+            input(type="password" class="password" placeholder="Repassword" id="rePasswordSignUp")
+            input(type="submit" class="submit" id="submitSignUp")
+            span(class="change" id="signUpChange") Log in to your account.
+    script(src="/js/jquery.js") 
+    script(src="/js/form.js") 

@@ -1,0 +1,34 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="/css/reset.css")
+        link(rel="stylesheet" href="/css/navbar.css")
+        link(rel="stylesheet" href="/css/footer.css")
+        link(rel="stylesheet" href="/css/chat.css")
+        link(rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon")
+        title Live Chat
+    body
+        include partials/navbar.pug
+        main(class="main")
+            div(class="message__container" id="messageContainer")
+                each message in messages
+                    if myUser == message.owner
+                        div(class="message-sended message")
+                            span(class="message__owner")=message.owner
+                            p(class="message__text")=message.message
+                    else 
+                        div(class="message-received message")
+                            span(class="message__owner")=message.owner
+                            p(class="message__text")=message.message
+
+
+            div(class="input__container")
+                input(type="text" class="input" placeholder="Message" id="inputMessage")
+                span(class="input__send" id="sendMessage") Send
+        include partials/footer.pug
+        script(src="/socket.io/socket.io.js") 
+        script(src="/js/jquery.js")
+        script(src="/js/chat.js") 
+        script(src="/js/navbar.js") 
