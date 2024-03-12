@@ -1,7 +1,8 @@
 $(document).ready(function () {
     const socket = io();
-    const owner = document.cookie.split(";")[1].split("=")[1];
-
+    const owner = getCookieValue('user');
+    
+    console.log(getCookieValue('user'))
     $('#messageContainer').scrollTop($('#messageContainer').height())
 
     $("#sendMessage").click(() => {
@@ -34,4 +35,13 @@ $(document).ready(function () {
             `<div class="message-received message"><span class="message__owner">${data.owner}</span><p class="message__text">${data.message}</p></div>`
         );
     });
+
+    function getCookieValue(name) 
+    {
+      const regex = new RegExp(`(^| )${name}=([^;]+)`)
+      const match = document.cookie.match(regex)
+      if (match) {
+        return match[2]
+      }
+   }
 });
