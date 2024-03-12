@@ -1,9 +1,6 @@
 $(document).ready(function () {
     const socket = io();
     const owner = getCookieValue('user');
-    
-    console.log(getCookieValue('user'))
-    $('#messageContainer').scrollTop($('#messageContainer').height())
 
     $("#sendMessage").click(() => {
         let message = $("#inputMessage").val();
@@ -13,6 +10,7 @@ $(document).ready(function () {
                 `<div class="message-sended message"><span class="message__owner">${owner}</span><p class="message__text">${message}</p></div>`
             );
             $("#inputMessage").val("");
+            $('#messageContainer').scrollTop($('#messageContainer').height())
         }
     });
 
@@ -26,6 +24,7 @@ $(document).ready(function () {
                     `<div class="message-sended message"><span class="message__owner">${owner}</span><p class="message__text">${message}</p></div>`
                 );
                 $("#inputMessage").val("");
+                $('#messageContainer').scrollTop($('#messageContainer').height())
             }
         }
     });
